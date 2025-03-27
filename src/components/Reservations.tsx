@@ -103,7 +103,7 @@ const Reservations: React.FC = () => {
                   <tr key={res.id}>
                     <td>{res.id || "N/A"}</td>
                     <td>{res.source || "N/A"}</td>
-                    <td>{res.title || "N/A"}</td>
+                    {/* <td>{res.outlet.title || "N/A"}</td> */}
                     <td>{res.name || "N/A"}</td>
                     <td>{res.email || "N/A"}</td>
                     <td>{res.phone || "N/A"}</td>
