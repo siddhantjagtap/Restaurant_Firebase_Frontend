@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchReservations, fetchReviews, fetchContactQueries, Reservation, Review, ContactQuery } from "../fetchData";
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+   XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   BarChart, Bar, AreaChart, Area, PieChart, Pie, Cell, ScatterChart, Scatter, ZAxis
 } from "recharts";
 import "../dashboard.css";
@@ -67,11 +67,11 @@ const Dashboard: React.FC = () => {
   // Area Chart: Reservations over time, split by source
   const reservationsByDate = reservations.reduce((acc, res) => {
     const date = res.date || "Unknown";
-    const source = res.source || "Unknown";
+    // const source = res.source || "Unknown";
     if (!acc[date]) {
       acc[date] = { date, "Bo-Tai": 0, "Swan": 0 };
     }
-    acc[date][source] = (acc[date][source] || 0) + 1;
+  
     return acc;
   }, {} as Record<string, { date: string; "Bo-Tai": number; "Swan": number }>);
   const areaChartData = Object.values(reservationsByDate);
@@ -155,7 +155,7 @@ const Dashboard: React.FC = () => {
                     fill="#8884d8"
                     dataKey="value"
                   >
-                    {pieChartData.map((entry, index) => (
+                    {pieChartData.map((_, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>

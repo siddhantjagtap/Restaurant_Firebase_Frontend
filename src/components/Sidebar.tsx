@@ -1,11 +1,8 @@
-// Sidebar.tsx
+// src/components/Sidebar.tsx
 import { NavLink } from "react-router-dom";
 
-interface SidebarProps {
-  onLogout: () => void;
-}
-
-const Sidebar: React.FC<SidebarProps> = () => {
+// Remove the onLogout prop since it's no longer needed
+const Sidebar: React.FC = () => {
   return (
     <div className="sidebar">
       <h3>Admin Panel</h3>

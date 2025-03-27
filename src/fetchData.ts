@@ -32,7 +32,7 @@ interface ContactQuery {
   source: string;
   fullName?: string;
   email?: string;
-  note?: string;
+  notes?: string;
   createdAt?: number;
 }
 
