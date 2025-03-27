@@ -86,14 +86,14 @@ const fetchReviews = async (): Promise<Review[]> => {
 
 const fetchContactQueries = async (): Promise<ContactQuery[]> => {
   try {
-    const querySnapshotBoTai = await getDocs(collection(dbBoTai, "ContactQueries"));
+    const querySnapshotBoTai = await getDocs(collection(dbBoTai, "ContactQuries"));
     const dataBoTai: ContactQuery[] = querySnapshotBoTai.docs.map(doc => ({
       id: doc.id,
       source: "Bo-Tai",
       ...doc.data(),
     }));
 
-    const querySnapshotSwan = await getDocs(collection(dbSwan, "ContactQueries"));
+    const querySnapshotSwan = await getDocs(collection(dbSwan, "ContactQuries"));
     const dataSwan: ContactQuery[] = querySnapshotSwan.docs.map(doc => ({
       id: doc.id,
       source: "Swan",

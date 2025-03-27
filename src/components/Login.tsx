@@ -11,7 +11,6 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // Dummy credentials
   const DUMMY_EMAIL = "sachin.tyagi@massiverestaurants.com";
   const DUMMY_PASSWORD = "admin@sachintyagi";
 

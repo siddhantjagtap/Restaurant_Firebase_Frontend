@@ -1,17 +1,11 @@
-import { NavLink, useNavigate } from "react-router-dom";
+// Sidebar.tsx
+import { NavLink } from "react-router-dom";
 
 interface SidebarProps {
   onLogout: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    onLogout(); // Set authenticated state to false
-    navigate("/login");
-  };
-
+const Sidebar: React.FC<SidebarProps> = () => {
   return (
     <div className="sidebar">
       <h3>Admin Panel</h3>
@@ -39,9 +33,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
           </li>
         </ul>
       </nav>
-      <button onClick={handleLogout} className="logout-btn">
-        Logout
-      </button>
     </div>
   );
 };

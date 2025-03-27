@@ -6,6 +6,7 @@ import ContactQueries from "./components/ContactQueries";
 import Reservations from "./components/Reservations";
 import Reviews from "./components/Reviews";
 import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar"; // Import the Navbar component
 import "./App.css";
 
 const App: React.FC = () => {
@@ -24,8 +25,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="app-container">
-        {isAuthenticated && <Sidebar onLogout={handleLogout} />}
+        {isAuthenticated && <Sidebar />}
         <div className="main-content">
+          {isAuthenticated && <Navbar onLogout={handleLogout} />}
           <Routes>
             {/* Redirect to login if not authenticated */}
             <Route
